@@ -10,18 +10,15 @@
 
 ## getting started with docker
 - containers
-    Dockerfile will define what goes on in the environment inside your container (also referred as image).
-    create save and deploy images
+  - Dockerfile will define what goes on in the environment inside your container (also referred as image). create save and deploy images
 - services
-    in a distributed application, different pieces of the app are called “services”.
-    a service only runs one image.
-    scaling a service changes the number of container instances running that piece of software, assigning more computing resources to service in process.
+  - in a distributed application, different pieces of the app are called “services”.
+a service only runs one image. scaling a service changes the number of container instances running that piece of software, assigning more computing resources to service in process.
     to define, run, and scale services with the Docker platform – just write a docker-compose.yml file.
 - swarm
-    multi-container, multi-machine applications are made possible by joining multiple machines into a “Dockerized” cluster called a swarm.
-    swarm is a group of machines that are running Docker and joined into a cluster
+  - multi-container, multi-machine applications are made possible by joining multiple machines into a “Dockerized” cluster called a swarm. swarm is a group of machines that are running Docker and joined into a cluster.
 - stack
-    a stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together. (java web app + monogdb)
+  - a stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together. (java web app + monogdb).
 
 ## refs
   + https://github.com/docker/labs/tree/master/developer-tools/java/
@@ -69,16 +66,14 @@
   + stop docker compose  
     docker-compose stop
 
-stop all containers:
-docker kill $(docker ps -q)
-
-remove all containers
-docker rm -f $(docker ps -a -q)
-
-remove all docker images
-docker rmi -f $(docker images -q)
-
-docker exec -ti <container-name-or-id> /bin/bash
+## misc
+  - stop all containers  
+  docker kill $(docker ps -q)
+  - remove all containers  
+  docker rm -f $(docker ps -a -q)
+  - remove all docker images  
+  docker rmi -f $(docker images -q)
+  - docker exec -ti <container-name-or-id> /bin/bash
 
 ## other tips
   + From inside of a Docker container, how do I connect to the localhost of the machine?
