@@ -1,7 +1,8 @@
-# HTTPS (HTTPS over TLS/SSL)
-- [How SSL certificate works ?](https://www.youtube.com/watch?v=33VYnE7Bzpk)
 
 # TLS (transport layer security)/SSL (secure sockets layer)
+
+## HTTPS (HTTPS over TLS/SSL)
+- [How SSL certificate works ?](https://www.youtube.com/watch?v=33VYnE7Bzpk)
 
 ## TLS/SSL
 - SSL and TLS are cryptographic protocols designed to provide communication security over a computer network
