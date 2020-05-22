@@ -1,3 +1,6 @@
+# HTTPS (HTTPS over TLS/SSL)
+- [How SSL certificate works ?](https://www.youtube.com/watch?v=33VYnE7Bzpk)
+
 # TLS (transport layer security)/SSL (secure sockets layer)
 
 ## TLS/SSL
