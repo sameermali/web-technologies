@@ -24,6 +24,9 @@ git checkout --track origin/release/fxadmin6.18.3  // creates local branch with 
 git checkout -b future_branch origin/future_branch // creates local branch with name future_branch and tracks remote branch
 git checkout -t origin/future_branch               // same as above
 
+# switch branch
+git checkout <existing-branch>  // switch to existing branch
+
 # branch contains commit id
 git branch --contains <commit-id>
 
@@ -86,12 +89,17 @@ git archive --format=zip -o /full/path/to/zipfile.zip HEAD:subdirectory // to ar
 git config --get remote.origin.url
 
 # revert in case of merge
-  git reflog
-  git reset --hard HEAD@{7}
+git reflog
+git reset --hard HEAD@{7}
 
 # checkout to old version of file
 git log /path/to/file.txt
 git checkout <commit_id> /path/to/file.txt
+
+# show commit logs
+git log --oneline     // show commit logs in one line
+git log -- subfolder  // show commit that modified subfolder or file
+git log -p file.txt   // show commit that modifed the file and also modifications can also use gitk
 
 # archive repository
 git archive --format zip --output /full/path/to/zipfile.zip master 
