@@ -1,4 +1,8 @@
+
 # TLS (transport layer security)/SSL (secure sockets layer)
+
+## HTTPS (HTTPS over TLS/SSL)
+- [How SSL certificate works ?](https://www.youtube.com/watch?v=33VYnE7Bzpk)
 
 ## TLS/SSL
 - SSL and TLS are cryptographic protocols designed to provide communication security over a computer network
@@ -63,8 +67,9 @@
     - contains CA certificates to trust (certificate authorities like Verisign, Thawte, Geotrust or GoDaddy)
   - keystore
     - contains private keys and certificates with their corresponding public keys.
-    - only needed if yor are a server or if the server requires client authentication
-  - [JSSE ref guide](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html#Stores)  
+    - only needed if yor are a server or if client requires authentication
+  - [Java 2 way TLS/SSL(Client Certificates) and PKCS12 vs JKS KeyStores](http://blog.palominolabs.com/2011/10/18/java-2-way-tlsssl-client-certificates-and-pkcs12-vs-jks-keystores/index.html)  
+    [JSSE ref guide](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html#Stores)  
     [truststore and keystore](https://stackoverflow.com/questions/318441/truststore-and-keystore-definitions)  
 - [different kinds of files](https://serverfault.com/questions/9708/what-is-a-pem-file-and-how-does-it-differ-from-other-openssl-generated-key-file)
   - [conversion between file types](https://www.cloudera.com/documentation/enterprise/5-10-x/topics/cm_sg_openssl_jks.html)
