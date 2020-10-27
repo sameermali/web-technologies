@@ -24,6 +24,11 @@ git checkout --track origin/release/fxadmin6.18.3  // creates local branch with 
 git checkout -b future_branch origin/future_branch // creates local branch with name future_branch and tracks remote branch
 git checkout -t origin/future_branch               // same as above
 
+# [squash commit](https://medium.com/@slamflipstrom/a-beginners-guide-to-squashing-commits-with-git-rebase-8185cf6e62ec)
+git rebase -i HEAD~n                               // number of commits to rebase
+git rebase -i <after-this-commit-sha1>
+keep one commit as pick and change all other to squash
+
 # switch branch
 git checkout <existing-branch>  // switch to existing branch
 
@@ -79,6 +84,10 @@ git rebase <branch_to_rebase>
 git reflog
 git merge <branch_to_merge>            // merge interactively
 git merge --no-edit <branch_to_merge>  // merge non-interactively
+
+# merge vs rebase
+https://www.youtube.com/watch?v=f1wnYdLEpgI&ab_channel=TheModernCoder
+https://www.themoderncoder.com/a-better-git-workflow-with-rebase/
 
 # git archive
 git archive --format=zip master // to check what content will be archived
