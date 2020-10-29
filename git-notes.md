@@ -4,36 +4,26 @@
 # unstage files 
 git reset <filepath>
 
-# fetch tags
-git fetch --tag
-
-# get list of all tags
-git tag
-
-# create tag
-git tag <tag_name>
-
-# fetch branches tags and deleted local branches if remote deleted
-git fetch --all --tags --prune
-
-# checkout tag
-git checkout -b <branch_name> tags/<tag_name>
-git checkout --track origin/release/fxadmin6.18.3  // creates local branch with name release/fxadmin6.18.3 and sets upstream to remote branch with same name
-
 # checkout remote branch
 git checkout -b future_branch origin/future_branch // creates local branch with name future_branch and tracks remote branch
 git checkout -t origin/future_branch               // same as above
 
-# [squash commit](https://medium.com/@slamflipstrom/a-beginners-guide-to-squashing-commits-with-git-rebase-8185cf6e62ec)
-git rebase -i HEAD~n                               // number of commits to rebase
-git rebase -i <after-this-commit-sha1>
-keep one commit as pick and change all other to squash
+# list/show branches
+git branch     // show local branches
+git branch -r  // show remote branches
+git branch -a  // show all local and remote branches
+git branch -vv // show remote tracking branch
 
 # switch branch
 git checkout <existing-branch>  // switch to existing branch
 
 # branch contains commit id
 git branch --contains <commit-id>
+
+# [squash commit](https://medium.com/@slamflipstrom/a-beginners-guide-to-squashing-commits-with-git-rebase-8185cf6e62ec)
+git rebase -i HEAD~n                               // number of commits to rebase
+git rebase -i <after-this-commit-sha1>
+keep one commit as pick and change all other to squash
 
 # push local branch to remote
 git push origin <local_name>
@@ -125,4 +115,20 @@ git apply mypatch.patch
 
 # diff recursively ignore whitespace
 diff -r -b configurations/foo-sales-config /Users/flexadm/codes/backup/foo-sales-config
+
+# fetch tags
+git fetch --tag
+
+# get list of all tags
+git tag
+
+# create tag
+git tag <tag_name>
+
+# fetch branches tags and deleted local branches if remote deleted
+git fetch --all --tags --prune
+
+# checkout tag
+git checkout -b <branch_name> tags/<tag_name>
+git checkout --track origin/release/fxadmin6.18.3  // creates local branch with name release/fxadmin6.18.3 and sets upstream to remote branch with same name
 ```
