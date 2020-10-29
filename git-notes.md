@@ -8,6 +8,9 @@ git reset <filepath>
 git checkout -b future_branch origin/future_branch // creates local branch with name future_branch and tracks remote branch
 git checkout -t origin/future_branch               // same as above
 
+# create new local branch
+git checkout -b <new-branch-name>
+
 # list/show branches
 git branch     // show local branches
 git branch -r  // show remote branches
