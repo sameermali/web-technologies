@@ -107,7 +107,9 @@ git log -p file.txt   // show commit that modifed the file and also modification
 git archive --format zip --output /full/path/to/zipfile.zip master 
 
 # diff of commit
-git show --color --pretty=format:%b <commit_id>
+git show --color --pretty=format:%b <commit-id>
+git show --name-only <commit-id>   //  list only files changed in commit
+git show <commit-id> <file-path>   // display diff of only specific file in specific commit
 
 # create git patch from changes in working directory
 git diff > mypatch.patch
