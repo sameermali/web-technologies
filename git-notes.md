@@ -68,10 +68,17 @@ git revert <commit_id>
 
 # cherry pick
 git cherry-pick 79ab59282040e0938fcf21b07715ae12957ebe7a^..54a4197c6bb5cc79d4fbcb5bed3cd1bf8389b17e
+git checkout <branch-to-which-we-need-to-merge>
+git cherry-pick <commit-id>
 
 # rebase
 git rebase -i HEAD~3  // http://stackoverflow.com/questions/2563632/how-can-i-merge-two-commits-into-one
 git rebase <branch_to_rebase>
+
+# stash commands
+git stash save
+git stash pop
+git stash clear // clear all saved stashes
 
 # merge
 git reflog
@@ -96,7 +103,8 @@ git reset --hard HEAD@{7}
 
 # checkout to old version of file
 git log /path/to/file.txt
-git checkout <commit_id> /path/to/file.txt
+git checkout <commit_id> -- /path/to/file.txt
+git checkout <commit_id>~1 -- /path/to/file.txt  // number of commits before commit_id
 
 # show commit logs
 git log --oneline     // show commit logs in one line
