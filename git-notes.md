@@ -71,9 +71,9 @@ git cherry-pick 79ab59282040e0938fcf21b07715ae12957ebe7a^..54a4197c6bb5cc79d4fbc
 git checkout <branch-to-which-we-need-to-merge>
 git cherry-pick <commit-id>
 
-# rebase
-git rebase -i HEAD~3  // http://stackoverflow.com/questions/2563632/how-can-i-merge-two-commits-into-one
-git rebase <branch_to_rebase>
+# rebase remote commits of same branch (local commits are written on top of remote commits)
+git fetch --all
+git rebase origin/branch-name  
 
 # stash commands
 git stash save
@@ -107,9 +107,10 @@ git checkout <commit_id> -- /path/to/file.txt
 git checkout <commit_id>~1 -- /path/to/file.txt  // number of commits before commit_id
 
 # show commit logs
-git log --oneline     // show commit logs in one line
-git log -- subfolder  // show commit that modified subfolder or file
-git log -p file.txt   // show commit that modifed the file and also modifications can also use gitk
+git log --oneline      // show commit logs in one line
+git log -- subfolder   // show commit that modified subfolder or file
+git log -p file.txt    // show commit that modifed the file and also modifications can also use gitk
+git log <other-branch> // show log history of branch other than current branch
 
 # archive repository
 git archive --format zip --output /full/path/to/zipfile.zip master 
@@ -124,7 +125,11 @@ git diff > mypatch.patch
 git diff --cached > mypatch.patch
 git diff --cached --binary > mypatch.patch  // if want to add binary files
 git format-patch -1 {commit-id} // create patch from commit id
+git format-patch -5 HEAD        // create patch from last 5 commits from HEAD
 git apply mypatch.patch
+
+# change remote tracking branch 
+git branch --set-upstream-to=origin/remote-branch-name
 
 # diff recursively ignore whitespace
 diff -r -b configurations/foo-sales-config /Users/flexadm/codes/backup/foo-sales-config
