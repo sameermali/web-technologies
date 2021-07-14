@@ -4,6 +4,12 @@
 # unstage files 
 git reset <filepath>
 
+# get remote branch url
+git config --get remote.origin.url
+
+# clone
+git clone url <folder>
+
 # checkout remote branch
 git checkout -b future_branch origin/future_branch // creates local branch with name future_branch and tracks remote branch
 git checkout -t origin/future_branch               // same as above
@@ -56,6 +62,9 @@ git clean -f -d
 # annotate file lines with commit information
 git annotate <file_path>
 
+# list of files changed in folder
+git log --name-status -10 path/to/dir
+
 # find branches which contain specific commit id
 git branch -r --contains <commit_id>
 example
@@ -75,15 +84,17 @@ git cherry-pick <commit-id>
 git fetch --all
 git rebase origin/branch-name  
 
-# stash commands
+# stash commands [https://www.freecodecamp.org/news/useful-tricks-you-might-not-know-about-git-stash-e8a9490f0a1a/]
 git stash save
 git stash pop
+git stash list  // list stash
 git stash clear // clear all saved stashes
 
 # merge
 git reflog
 git merge <branch_to_merge>            // merge interactively
 git merge --no-edit <branch_to_merge>  // merge non-interactively
+git merge origin/<branch-name>         // merge remote branch
 
 # merge vs rebase
 https://www.youtube.com/watch?v=f1wnYdLEpgI&ab_channel=TheModernCoder
@@ -111,6 +122,8 @@ git log --oneline      // show commit logs in one line
 git log -- subfolder   // show commit that modified subfolder or file
 git log -p file.txt    // show commit that modifed the file and also modifications can also use gitk
 git log <other-branch> // show log history of branch other than current branch
+git log --pretty=format:"%h%x09%an%x09%ad%x09%s" // one line log with author, date etc
+git log -S "search string" --source --all
 
 # archive repository
 git archive --format zip --output /full/path/to/zipfile.zip master 
