@@ -133,6 +133,11 @@ git show --color --pretty=format:%b <commit-id>
 git show --name-only <commit-id>   //  list only files changed in commit
 git show <commit-id> <file-path>   // display diff of only specific file in specific commit
 
+# diff between two branches
+git diff branch1..branch2                        // complete diff
+git diff --name-only branch1..branch2            // show only files having diff
+git diff branch1..branch2 relative/path/to/file  // single file diff between two branches
+
 # create git patch from changes in working directory
 git diff > mypatch.patch
 git diff --cached > mypatch.patch

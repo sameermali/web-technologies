@@ -21,7 +21,7 @@ common repo for web technologies like docker, kubernetes etc.
     - domain: allowed hosts. if specified sub domain also considered.
     - path: url that must be present in requested URL to send cookie.
 - proxy
-  - forward proxy: acting on behalf of requestor  
+  - forward proxy: acting on behalf of requester  
     (client <--> proxy) <--> server  
     client knows all 3 machines
   - reverse proxy: acting on behalf of service/content provider
@@ -38,4 +38,7 @@ ulimit -a  \\ display all settings
   - **soft limit** is the effective value right now for that user. The user can increase the soft limit on their own in times of needing more resources, but cannot set the soft limit higher than the hard limit.
 - in linux `ulimit -u` shows max user processes which is actually threads   
 https://unix.stackexchange.com/questions/322056/does-nproc-in-limits-conf-refers-to-number-of-processes-or-number-of-threads
-- exceeding soft limit (usually 1024) i.e. threads are more than 1024 may result in `OutOfMemoryError: Unable to create new native thread` in java application  
+- exceeding soft limit (usually 1024) i.e. threads are more than 1024 may result in `OutOfMemoryError: Unable to create new native thread` in java application
+
+## [X11 forwarding](https://www.youtube.com/watch?v=FlHVuA_98SA&ab_channel=Conda)
+- used to access GUI application running on remote (linux) server
