@@ -84,12 +84,6 @@ git cherry-pick <commit-id>
 git fetch --all
 git rebase origin/branch-name  
 
-# stash commands [https://www.freecodecamp.org/news/useful-tricks-you-might-not-know-about-git-stash-e8a9490f0a1a/]
-git stash save
-git stash pop
-git stash list  // list stash
-git stash clear // clear all saved stashes
-
 # merge
 git reflog
 git merge <branch_to_merge>            // merge interactively
@@ -188,4 +182,41 @@ git fetch --all --tags --prune
 git checkout -b <branch_name> <tag_name>
 git checkout --track origin/release/fxadmin6.18.3  // creates local branch with name release/fxadmin6.18.3 and sets upstream to remote branch with same name
 
+# ~~~~~ stash ~~~~~
+# display stash list
+git stash list
+
+#  summary of stash
+git stash show stash@{0}
+
+# details of stash
+git stash show -p stash@{0}
+
+# stash modified files
+git stash
+
+# stash modified + untracked files
+git stash -u
+
+# stash modified + untracked + ignored files
+git stash -a
+
+# stash files in particular folder
+git stash push /path/to/folder
+
+# git stash with message and specific files
+git stash -m "message" file1.txt file2.txt
+
+# apply and keep stash
+git stash apply
+git stash apply stash@{n}
+
+# apply and discard stash
+git stash pop
+
+# drop nth stash
+git stash drop stash@{n}
+
+# clear all saved stashes
+git stash clear
 ```
