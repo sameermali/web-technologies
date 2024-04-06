@@ -152,19 +152,40 @@ git branch --set-upstream-to=origin/remote-branch-name
 # diff recursively ignore whitespace
 diff -r -b configurations/foo-sales-config /Users/flexadm/codes/backup/foo-sales-config
 
-# fetch tags
-git fetch --tag
-
-# get list of all tags
-git tag
-
+# ~~~~~ tags ~~~~~
 # create tag
 git tag <tag_name>
+
+# list remote tags
+git ls-remote --tags origin
+
+# list local tags
+git tag
+
+# grep/search local tags
+git tag -l "v1.*"
+
+# fetch tags from remote repo origin
+git fetch --tags
+
+# switch to tag: put your working directory in the state it was when the specified tag was created
+git checkout <tag>
+git checkout v1.0
+
+# check if particular commit is present in tag. it will list all tags containing commit_hash
+git tag -- contains <commit_hash> 
+
+# check if <commit_hash> is present in particular tag
+git rev-list <tag_name> | grep <commit_hash>
+
+# display tag details 
+git show <tag_name>
 
 # fetch branches tags and deleted local branches if remote deleted
 git fetch --all --tags --prune
 
-# checkout tag
-git checkout -b <branch_name> tags/<tag_name>
+# create branch from tag
+git checkout -b <branch_name> <tag_name>
 git checkout --track origin/release/fxadmin6.18.3  // creates local branch with name release/fxadmin6.18.3 and sets upstream to remote branch with same name
+
 ```
