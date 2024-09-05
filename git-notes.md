@@ -2,7 +2,7 @@
 
 ```
 # unstage files 
-git reset <filepath>
+git restore <filepath>
 
 # get remote branch url
 git config --get remote.origin.url
@@ -26,8 +26,13 @@ git branch -vv // show remote tracking branch
 # switch branch
 git checkout <existing-branch>  // switch to existing branch
 
-# branch contains commit id
+# find commit
 git branch --contains <commit-id>
+git log --oneline --all --grep="part of commit message"  // shows all branches and tags containing commmit messaage
+// to find in tag need to know commit-id which can be found using above command
+git tag --contains <commit-id>              // find all tags containing commit-id
+git rev-list <tag-name> | grep <commit-id>  // commit-id present in specified tag name
+
 
 # [squash commit](https://medium.com/@slamflipstrom/a-beginners-guide-to-squashing-commits-with-git-rebase-8185cf6e62ec)
 git rebase -i HEAD~n                               // number of commits to rebase
